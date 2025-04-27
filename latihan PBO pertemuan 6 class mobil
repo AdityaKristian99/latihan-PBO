@@ -1,0 +1,30 @@
+<?php
+class Mobil {
+    private $kecepatan = 0;
+    private $bahanBakar = 100;
+
+    public function tambahKecepatan($nilai) {
+        $this->kecepatan += $nilai;
+        echo "Kecepatan bertambah menjadi {$this->kecepatan} km/jam.<br>";
+        return $this;
+    }
+
+    public function kurangiKecepatan($nilai) {
+        $this->kecepatan -= $nilai;
+        echo "Kecepatan berkurang menjadi {$this->kecepatan} km/jam.<br>";
+        return $this;
+    }
+
+    public function isiBahanBakar($jumlah) {
+        $this->bahanBakar += $jumlah;
+        echo "Bahan bakar ditambah, sekarang menjadi {$this->bahanBakar} liter.<br>";
+        return $this;
+    }
+}
+
+// Contoh pemanggilan method chaining
+$mobil = new Mobil();
+$mobil->tambahKecepatan(20)
+      ->kurangiKecepatan(5)
+      ->isiBahanBakar(10);
+?>

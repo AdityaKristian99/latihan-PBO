@@ -1,0 +1,19 @@
+<?php
+class Kendaraan {
+    public function info() {
+        return "Ini adalah kendaraan umum.";
+    }
+}
+
+class Motor extends Kendaraan {
+    public function info() {
+        return "Ini adalah motor dengan dua roda.";
+    }
+}
+
+$kendaraan = new Kendaraan();
+$motor = new Motor();
+
+echo $kendaraan->info(); // Output: Ini adalah kendaraan umum.
+echo $motor->info(); // Output: Ini adalah motor dengan dua roda.
+?>

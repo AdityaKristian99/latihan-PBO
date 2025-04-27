@@ -1,0 +1,26 @@
+<?php
+// Mendefinisikan interface
+interface Hewan {
+    public function bersuara();
+}
+
+// Kelas yang mengimplementasikan interface Hewan
+class Kucing implements Hewan {
+    public function bersuara() {
+        return "Meong";
+    }
+}
+
+class Anjing implements Hewan {
+    public function bersuara() {
+        return "Guk guk";
+    }
+}
+
+// Implementasi Polimorfisme dengan Interface
+$hewan1 = new Kucing();
+$hewan2 = new Anjing();
+
+echo $hewan1->bersuara() . "<br>";
+echo $hewan2->bersuara() . "<br>";
+?>

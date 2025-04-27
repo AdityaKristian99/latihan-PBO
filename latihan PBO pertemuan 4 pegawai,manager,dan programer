@@ -1,0 +1,33 @@
+<?php
+// Kelas induk (superclass)
+class Pegawai {
+    public function getGaji() {
+        return "Gaji pegawai umum";
+    }
+}
+
+// Kelas turunan yang meng-overriding method getGaji()
+class Manager extends Pegawai {
+    public function getGaji() {
+        return "Gaji manager lebih besar";
+    }
+}
+
+class Programmer extends Pegawai {
+    public function getGaji() {
+        return "Gaji programmer tergantung pengalaman";
+    }
+}
+
+// Fungsi dengan Dynamic Binding
+function cetakGaji(Pegawai $pegawai) {
+    echo $pegawai->getGaji() . "<br>";
+}
+
+// Implementasi Dynamic Binding
+$pegawai1 = new Manager();
+$pegawai2 = new Programmer();
+
+cetakGaji($pegawai1);
+cetakGaji($pegawai2);
+?>
